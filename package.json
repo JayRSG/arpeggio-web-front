@@ -1,6 +1,6 @@
 {
-  "name": "breeze-next",
-  "version": "0.1.0",
+  "name": "arpeggio-courses-front",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,12 +8,35 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
+    "@tombatossals/react-chords": "^0.2.10",
     "@headlessui/react": "^1.4.2",
-    "axios": "^0.21.1",
+    "axios": "^0.22.0",
+    "browserify": "^17.0.0",
+    "compressorjs": "^1.1.1",
+    "cookie": "^0.4.1",
+    "cross-env": "^7.0.3",
+    "libvips": "0.0.2",
+    "microplugin": "0.0.3",
     "next": "^12.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "swr": "^1.2.2"
+    "swr": "^1.2.2",
+    "react-media-recorder": "^1.6.3",
+    "react-responsive-carousel": "^3.2.23",
+    "react-responsive-modal": "^6.2.0",
+    "react-simple-image-viewer": "^1.2.1",
+    "react-slick": "^0.28.1",
+    "react-youtube": "^7.13.1",
+    "reactify": "^1.1.1",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^8.0.7",
+    "typescript": "^4.6.3",
+    "vinyl-source-stream": "^1.1.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.12.1",
