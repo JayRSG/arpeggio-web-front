@@ -2,7 +2,9 @@ import ApplicationLogo from '@/components/ApplicationLogo'
 import Dropdown from '@/components/Dropdown'
 import Link from 'next/link'
 import NavLink from '@/components/NavLink'
-import ResponsiveNavLink, { ResponsiveNavButton } from '@/components/ResponsiveNavLink'
+import ResponsiveNavLink, {
+    ResponsiveNavButton,
+} from '@/components/ResponsiveNavLink'
 import { DropdownButton } from '@/components/DropdownLink'
 import { useAuth } from '@/hooks/auth'
 import { useRouter } from 'next/router'
@@ -14,6 +16,8 @@ const Navigation = ({ user }) => {
     const { logout } = useAuth()
 
     const [open, setOpen] = useState(false)
+
+    console.log(user)
 
     return (
         <nav className="bg-white border-b border-gray-100">
@@ -47,7 +51,11 @@ const Navigation = ({ user }) => {
                             width="48"
                             trigger={
                                 <button className="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 focus:outline-none transition duration-150 ease-in-out">
-                                    <div>{user?.name}</div>
+                                    <div>
+                                        {user?.data?.first_name +
+                                            ' ' +
+                                            user?.data?.last_name}
+                                    </div>
 
                                     <div className="ml-1">
                                         <svg
@@ -63,7 +71,6 @@ const Navigation = ({ user }) => {
                                     </div>
                                 </button>
                             }>
-
                             {/* Authentication */}
                             <DropdownButton onClick={logout}>
                                 Logout
@@ -136,10 +143,10 @@ const Navigation = ({ user }) => {
 
                             <div className="ml-3">
                                 <div className="font-medium text-base text-gray-800">
-                                    {user?.name}
+                                    {user?.data?.name}
                                 </div>
                                 <div className="font-medium text-sm text-gray-500">
-                                    {user?.email}
+                                    {user?.data?.email}
                                 </div>
                             </div>
                         </div>
