@@ -42,12 +42,12 @@ const GoogleAndFacebookLogin = ({ className }) => {
                 // onClick={() => {
                 //   getSocialLogin("google");
                 // }}
-                className="btn text-black border-2 border-gray-300 rounded-3xl w-60 2xl:w-48 h-12 text-center text-xxxs sm:text-xxs sm:w-40 sm:px-0 font-bold">
+                className="btn text-black border-2 border-gray-300 rounded-3xl w-60 sm:w-52 xs:w-36 h-12 text-center text-xs xs:text-xxs font-bold hover:scale-105 transform transition-all duration-500">
                 <FontAwesomeIcon
                     icon={faGoogle}
                     size="1x"
                     transform="left-20"
-                />{' '}
+                />
                 LOGIN WITH GOOGLE
             </a>
 
@@ -55,12 +55,12 @@ const GoogleAndFacebookLogin = ({ className }) => {
                 // onClick={() => {
                 //   getSocialLogin("facebook");
                 // }}
-                className="btn border-2 border-blue-400 rounded-3xl w-60 2xl:w-48 h-12 text-center text-blue-400 text-xxxs sm:text-xxs sm:px-0 sm:w-40 font-bold">
+                className="btn border-2 border-blue-400 rounded-3xl w-60 sm:w-52 xs:w-36 h-12 text-center text-blue-400 text-xs xs:text-xxxxs font-bold hover:scale-105 transform transition-all duration-500">
                 <FontAwesomeIcon
                     icon={faFacebookF}
                     size="1x"
-                    transform="left-20"
-                />{' '}
+                    transform="left-28"
+                />
                 LOGIN WITH FACEBOOK
             </a>
         </div>
