@@ -191,7 +191,7 @@ module.exports = {
                 146: '65%',
                 147: '38%',
                 148: '118rem',
-                149: '33%',
+                149: '32%',
                 fit: 'fit-content',
             },
             boxShadow: {
@@ -259,6 +259,7 @@ module.exports = {
             fontSize: {
                 xxs: '.5rem',
                 xxxs: '.6rem',
+                xxxxs: '.4rem',
             },
             padding: {
                 19: '4.75rem',
