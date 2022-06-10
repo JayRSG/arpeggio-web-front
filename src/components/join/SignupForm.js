@@ -140,7 +140,9 @@ const SignupForm = () => {
                 />
             </div>
 
-            <Button>Register</Button>
+            <Button className="bg-btn-color hover:scale-105 transform transition-all duration-500">
+                Register
+            </Button>
         </form>
     )
 }
