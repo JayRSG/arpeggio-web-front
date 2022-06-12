@@ -1,4 +1,4 @@
-import Navigation from '@/components/Layouts/Navigation'
+// import Navigation from '@/components/Layouts/Navigation'
 import { useAuth } from '@/hooks/auth'
 
 const AppLayout = ({ header, children }) => {
@@ -6,7 +6,7 @@ const AppLayout = ({ header, children }) => {
 
     return (
         <div className="min-h-screen bg-gray-100">
-            <Navigation user={user} />
+            {/* <Navigation user={user} /> */}
 
             {/* Page Heading */}
             <header className="bg-white shadow">

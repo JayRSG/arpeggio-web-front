@@ -5,7 +5,7 @@ import Navbar from '@/components/Layouts/Navbar'
 import Footer from '@/components/Layouts/Footer'
 
 export default function home() {
-    // const { user } = useAuth({ middleware: 'guest' })
+    
 
     return (
         <>
