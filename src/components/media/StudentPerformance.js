@@ -5,8 +5,9 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 // import apiClient, { getSocialVideoLinkEndPoint, spaAuth } from "../../util/api";
 import YouTube from 'react-youtube'
-// import { checkValidURL, fetchOEmbedData } from "../../util/ytmanager";
-// import Student_Performance from "../../lib/student_performance"; //Local file Storage
+import { checkValidURL, fetchOEmbedData } from '../../util/ytmanager'
+import Student_Performance from '../../lib/student_performance.json' //Local file Storage
+import Modal from './Modal'
 
 const StudentPerformance = () => {
     const [open, setOpen] = useState(false)
@@ -44,17 +45,17 @@ const StudentPerformance = () => {
     // 		});
     // };
 
-    // useEffect(() => {
-    // 	/**
-    // 	 * Fetching from the backend is disabled for temporary basis and is served from local file stored in Video_links. Uncomment the fetchFreeClasses() to enable backend fetching video data.
-    // 	 */
-    // 	// fetchFreeClasses();
-    // 	setVideoData(Student_Performance);
-    // }, []);
+    useEffect(() => {
+        /**
+         * Fetching from the backend is disabled for temporary basis and is served from local file stored in Video_links. Uncomment the fetchFreeClasses() to enable backend fetching video data.
+         */
+        // fetchFreeClasses();
+        setVideoData(Student_Performance)
+    }, [])
 
-    // useEffect(() => {
-    // 	console.log(videoData);
-    // }, [videoData]);
+    useEffect(() => {
+        console.log(videoData)
+    }, [videoData])
 
     const createModalData = (link, title, desc) => {
         let video_id = checkValidURL(link, true)
