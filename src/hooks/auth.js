@@ -87,7 +87,13 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const resendEmailVerification = ({ setStatus }) => {
         axios
             .post('api/email/verification-notification')
-            .then(response => setStatus(response.data.status))
+            .then(response => {
+                setStatus(response.status)
+                console.log(response);
+            })
+            
+
+            
     }
 
     const logout = async () => {
