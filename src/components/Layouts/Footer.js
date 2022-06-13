@@ -133,7 +133,8 @@ const Footer = () => {
                             <Logo className="lg:px-16 md:pl-16 sm:px-6 pb-10" />
                         </a>
                     </Link>
-                    <div className="flex space-x-2 md:pl-16 sm:justify-evenly sm:w-full">
+
+                    <div className="flex space-x-2 md:pl-12 sm:pl-0 sm:justify-evenly sm:w-full">
                         <div
                             onClick={() => {
                                 window.open(
