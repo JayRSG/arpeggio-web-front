@@ -13,10 +13,7 @@ import { useAuth } from '@/hooks/auth'
 const Navbar = () => {
     const [isSideBarOpen, setisSideBarOpen] = useState(false)
 
-    const { user } = useAuth({
-        middleware: 'guest',
-        redirectIfAuthenticated: '/',
-    })
+    const { user } = useAuth({ middleware: 'guest' })
 
     // the sidebar mobile menu
     const sideBarRef = useRef(false)
@@ -102,13 +99,13 @@ const Navbar = () => {
                         </NavLink>
                     </li>
 
-                    <li className="pt-16">
+                    {/* <li className="pt-16">
                         <Link href="/join">
                             <Button className="bg-white text-btn-color rounded-lg hover:opacity-70 transition-all duration-500 w-40">
                                 Join
                             </Button>
                         </Link>
-                    </li>
+                    </li> */}
 
                     {!user ? (
                         <li className="pt-16">
