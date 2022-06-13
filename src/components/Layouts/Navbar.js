@@ -2,30 +2,18 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import SpecialNav from '../SpecialNav'
 
-// import { isLoggedIn, useGetAuth } from "../util/auth";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
-
 // import your icons
 import { Logo, SpecialNavBox } from '../SVGs'
 import MediaNav from '../MediaNav'
 import NavLink from '../NavLink'
 import Button from '../Button'
+import { useAuth } from '@/hooks/auth'
 // import { getCurrentBreakPoint, useWidth } from "../helpers/screensRes";
 
 const Navbar = () => {
     const [isSideBarOpen, setisSideBarOpen] = useState(false)
-    // const [auth, setAuth] = useState(false);
 
-    // useGetAuth()
-    //   .then((authdata) => {
-    //     setAuth(authdata);
-    //     // console.log(auth);
-    //   })
-
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    const { user } = useAuth({ middleware: 'guest' })
 
     // the sidebar mobile menu
     const sideBarRef = useRef(false)
@@ -111,29 +99,29 @@ const Navbar = () => {
                         </NavLink>
                     </li>
 
-                    <li className="pt-16">
+                    {/* <li className="pt-16">
                         <Link href="/join">
                             <Button className="bg-white text-btn-color rounded-lg hover:opacity-70 transition-all duration-500 w-40">
                                 Join
                             </Button>
                         </Link>
-                    </li>
+                    </li> */}
 
-                    {/* {!auth && !isLoggedIn() ? (
-                    <li className="pt-16">
-                        <Link href="/join">
-                            <a className="btn text-btn-color font-bold text-2xl bg-white rounded-lg px-12 hover:opacity-70 transition-all duration-500">
-                                Join
-                            </a>
-                        </Link>
-                    </li>
-                ) : (
-                    <SpecialNav
-                        user_name={auth.user_name}
-                        className="w-40 text-center pt-4 z-50"
-                        className1="text-2xl"
-                    />
-                )} */}
+                    {!user ? (
+                        <li className="pt-16">
+                            <Link href="/join">
+                                <a className="btn text-btn-color font-bold text-2xl bg-white rounded-lg px-12 hover:opacity-70 transition-all duration-500">
+                                    Join
+                                </a>
+                            </Link>
+                        </li>
+                    ) : (
+                        <SpecialNav
+                            user_name={user?.data?.user_name}
+                            className="w-40 text-center pt-4 z-50"
+                            className1="text-2xl"
+                        />
+                    )}
                 </ul>
             </div>
         )
@@ -187,25 +175,19 @@ const Navbar = () => {
                             </a>
                         </Link>
 
-                        <Link href="/join">
-                            <Button className="w-36 bg-btn-color rounded-lg outline-none hover:scale-105 transform transition-all duration-500 md:hidden sm:hidden self-end absolute top-12 right-52 2xl:right-28 xl:right-28 lg:right-12">
-                                Join
-                            </Button>
-                        </Link>
-
-                        {/* {!auth && !isLoggedIn() ? (
-                          <Link href="/join">
-                              <a className="font-bold text-2xl outline-none md:hidden sm:hidden btn px-8 py-2 rounded-lg bg-btn-color self-end absolute top-12 right-52 2xl:right-28 xl:right-28 lg:right-28">
-                                  Join
-                              </a>
-                          </Link>
-                      ) : (
-                          <SpecialNav
-                              user_name={auth.user_name}
-                              className="w-28 text-center relative top-14 right-8 z-50 md:hidden sm:hidden"
-                              className1="text-base"
-                          />
-                      )} */}
+                        {!user ? (
+                            <Link href="/join">
+                                <Button className="w-36 bg-btn-color rounded-lg outline-none hover:scale-105 transform transition-all duration-500 md:hidden sm:hidden self-end absolute top-12 right-52 2xl:right-28 xl:right-28 lg:right-12">
+                                    Join
+                                </Button>
+                            </Link>
+                        ) : (
+                            <SpecialNav
+                                user_name={user?.data?.user_name}
+                                className="w-28 text-center relative top-14 right-8 z-50 md:hidden sm:hidden"
+                                className1="text-base"
+                            />
+                        )}
                     </div>
 
                     <ul className="md:hidden font-body font-bold sm:hidden list-none flex justify-between items-center w-3/5 lg:w-146 self-end">

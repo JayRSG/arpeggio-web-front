@@ -74,7 +74,9 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
         axios
             .post('api/reset-password', { token: router.query.token, ...props })
-            .then(response => router.push('/login?reset=' + btoa(response.data.status)))
+            .then(response =>
+                router.push('api/login?reset=' + btoa(response.data.status)),
+            )
             .catch(error => {
                 if (error.response.status !== 422) throw error
 
@@ -85,21 +87,28 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const resendEmailVerification = ({ setStatus }) => {
         axios
             .post('api/email/verification-notification')
-            .then(response => setStatus(response.data.status))
+            .then(response => {
+                setStatus(response.status)
+                console.log(response);
+            })
+            
+
+            
     }
 
     const logout = async () => {
-        if (! error) {
-            await axios
-                .post('api/logout')
-                .then(() => mutate())
+        await csrf()
+
+        if (!error) {
+            await axios.post('api/logout').then(() => mutate())
         }
 
-        window.location.pathname = '/login'
+        window.location.pathname = '/'
     }
 
     useEffect(() => {
-        if (middleware === 'guest' && redirectIfAuthenticated && user) router.push(redirectIfAuthenticated)
+        if (middleware === 'guest' && redirectIfAuthenticated && user)
+            router.push(redirectIfAuthenticated)
         if (middleware === 'auth' && error) logout()
     }, [user, error])
 

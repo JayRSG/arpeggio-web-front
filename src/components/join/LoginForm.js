@@ -1,116 +1,123 @@
-// import apiClient, { spaAuth, loginEndPoint } from '../../util/api'
-// import { responseManager } from '../../util/auth'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Input from '../Input'
 import Button from '../Button'
+import { useRouter } from 'next/router'
+import { useAuth } from '@/hooks/auth'
+import AuthSessionStatus from '../AuthSessionStatus'
+import AuthValidationErrors from '../AuthValidationErrors'
 
 const LoginForm = () => {
-    // const loginCred = {
-    // 	user_name: "",
-    // 	password: "",
-    // 	remember: false,
-    // }
-    // const [formData, setFormData] = useState(loginCred);
-    // const [remember, setRemember] = useState(false);
+    const router = useRouter()
 
-    // const handleInputChange = (e) => {
-    // 	setFormData({
-    // 		...formData,
-    // 		[e.currentTarget.name]: e.currentTarget.value,
-    // 	});
-    // };
+    const { login } = useAuth({
+        middleware: 'guest',
+        redirectIfAuthenticated: '/',
+    })
 
-    // const rememberHandler = (e) => {
-    // 	e.currentTarget.value = e.currentTarget.checked;
-    // };
+    const [user_name, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [remember, setRemember] = useState(false)
+    const [errors, setErrors] = useState([])
+    const [status, setStatus] = useState(null)
 
-    // /**
-    //  *
-    //  * @param {*} e
-    //  * Form Submission Handler
-    //  */
-    // const loginHandler = async (e) => {
-    // 	e.preventDefault();
+    useEffect(() => {
+        if (router.query.reset?.length > 0 && errors.length === 0) {
+            setStatus(atob(router.query.reset))
+        } else {
+            setStatus(null)
+        }
+    })
 
-    // 	apiClient
-    // 		.get(spaAuth)
-    // 		.then((response) => {
-    // 			console.log(response);
+    const submitForm = async event => {
+        event.preventDefault()
+        console.log('Submit Handler Pressed')
 
-    // 			console.log(formData);
-    // 			apiClient
-    // 				.post(loginEndPoint, formData)
-    // 				.then((response) => {
-    // 					console.log(response);
-
-    // 					responseManager("login", response, formData);
-    // 				})
-    // 				.catch((error) => {
-    // 					console.log(error);
-    // 				});
-    // 		})
-    // 		.catch((error) => {
-    // 			console.log(error);
-    // 		});
-    // };
-
+        login({ user_name, password, setErrors, setStatus })
+    }
     return (
-        <form
-            className="flex flex-col justify-center w-full items-center mt-8 flex-wrap"
-            action=""
-            id="LoginForm"
-            // onSubmit={loginHandler}
-        >
-            <div className="w-full flex flex-col justify-center items-center mb-10">
-                <Input
-                    id="username"
-                    type="text"
-                    name="user_name"
-                    placeholder="Username"
-                    // onChange={handleInputChange}
-                    required={true}
-                />
+        <>
+            <div className='flex flex-col justify-center mt-3 flex-wrap'>
+                {/* Session Status */}
+                <AuthSessionStatus className="mb-4" status={status} />
 
-                <Input
-                    id="password"
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    // onChange={handleInputChange}
-                    required={true}
-                />
-
-                <div className="w-5/6 flex items-center justify-between">
-                    <div>
-                        <label className="flex items-center text-gray-400 font-bold">
-                            <input
-                                className="leading-tight"
-                                type="checkbox"
-                                // value={remember}
-                                id="remember"
-                                // onChange={handleInputChange}
-                                // onClick={rememberHandler}
-                                name="remember"
-                            />
-                            <span className="text-sm pl-2">Remember Me</span>
-                        </label>
-                    </div>
-
-                    <div>
-                        <Link href="/">
-                            <a className="font-bold text-sm text-gray-400 transition-colors duration-500 hover:text-blue-300">
-                                Forgot Password
-                            </a>
-                        </Link>
-                    </div>
-                </div>
+                {/* Validation Errors */}
+                <AuthValidationErrors className="mb-4" errors={errors} />
             </div>
 
-            <Button className="bg-btn-color hover:scale-105 transform transition-all duration-500">
-                Login
-            </Button>
-        </form>
+            <form
+                className="flex flex-col justify-center w-full items-center mt-8 flex-wrap"
+                action=""
+                id="LoginForm"
+                onSubmit={submitForm}>
+                <div className="w-full flex flex-col justify-center items-center mb-10">
+                    <Input
+                        id="username"
+                        type="text"
+                        name="user_name"
+                        placeholder="Username"
+                        value={user_name}
+                        onChange={event =>
+                            setUsername(event.currentTarget.value)
+                        }
+                        required={true}
+                        autoFocus
+                    />
+
+                    <Input
+                        id="password"
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={event =>
+                            setPassword(event.currentTarget.value)
+                        }
+                        required={true}
+                        autoFocus
+                        autoComplete="current-password"
+                    />
+
+                    <div className="w-5/6 flex items-center justify-between">
+                        <div>
+                            <label
+                                className="flex items-center text-gray-400 font-bold"
+                                htmlFor="remember">
+                                <input
+                                    className="leading-tight"
+                                    id="remember"
+                                    name="remember"
+                                    type="checkbox"
+                                    checked={remember}
+                                    onChange={e =>
+                                        setRemember(e.currentTarget.checked)
+                                    }
+                                />
+                                <span className="text-sm pl-2">
+                                    Remember Me
+                                </span>
+                            </label>
+                        </div>
+
+                        <div>
+                            <Link href="/">
+                                <a className="font-bold text-sm text-gray-400 transition-colors duration-500 hover:text-blue-300">
+                                    Forgot Password
+                                </a>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+                <Button
+                    onClick={e => {
+                        e.stopPropagation()
+                    }}
+                    className="bg-btn-color hover:scale-105 transform transition-all duration-500">
+                    Login
+                </Button>
+            </form>
+        </>
     )
 }
 

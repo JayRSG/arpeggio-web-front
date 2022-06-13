@@ -43,7 +43,7 @@ const Login = () => {
             <AuthCard
                 logo={
                     <Link href="/">
-                        <a>
+                        <a href="/">
                             <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
                         </a>
                     </Link>

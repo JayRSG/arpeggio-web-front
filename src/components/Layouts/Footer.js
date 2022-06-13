@@ -30,35 +30,35 @@ const Footer = () => {
                     {/* <Link href="">
                       <p className="pt-3">Guitar</p>
                   </Link> */}
-                    <NavLink href="" classname="pt-3">
+                    <NavLink href="#" classname="pt-3">
                         Guitar
                     </NavLink>
 
                     {/* <Link href="">
                       <p className="leading-5 pt-1">Piano</p>
                   </Link> */}
-                    <NavLink href="" classname="leading-5 pt-1">
+                    <NavLink href="#" classname="leading-5 pt-1">
                         Piano
                     </NavLink>
 
                     {/* <Link href="">
                       <p className="leading-5 pt-1">Drums</p>
                   </Link> */}
-                    <NavLink href="" classname="leading-5 pt-1">
+                    <NavLink href="#" classname="leading-5 pt-1">
                         Drums
                     </NavLink>
 
                     {/* <Link href="">
                       <p className="leading-5 pt-1">Flute</p>
                   </Link> */}
-                    <NavLink href="" classname="leading-5 pt-1">
+                    <NavLink href="#" classname="leading-5 pt-1">
                         Flute
                     </NavLink>
 
                     {/* <Link href="">
                       <p className="leading-5 pt-1">Ukulele</p>
                   </Link> */}
-                    <NavLink href="" classname="leading-5 pt-1">
+                    <NavLink href="#" classname="leading-5 pt-1">
                         Ukelele
                     </NavLink>
                 </div>
@@ -67,35 +67,35 @@ const Footer = () => {
                     {/* <Link href="/shop">
                       <a className="font-bold">Shop</a>
                   </Link> */}
-                    <NavLink href="" classname="font-bold">
+                    <NavLink href="#" classname="font-bold">
                         Shop
                     </NavLink>
 
                     {/* <Link href="">
                       <p className="pt-3">Instruments</p>
                   </Link> */}
-                    <NavLink href="" classname="pt-3">
+                    <NavLink href="#" classname="pt-3">
                         Instruments
                     </NavLink>
 
                     {/* <Link href="">
                       <p className="leading-4 pt-1">Accessories</p>
                   </Link> */}
-                    <NavLink href="" classname="leading-5 pt-1">
+                    <NavLink href="#" classname="leading-5 pt-1">
                         Accessories
                     </NavLink>
 
                     {/* <Link href="">
                       <p className="leading-5 pt-1">Merchandise</p>
                   </Link> */}
-                    <NavLink href="" classname="leading-5 pt-1">
+                    <NavLink href="#" classname="leading-5 pt-1">
                         Merchandise
                     </NavLink>
 
                     {/* <Link href="">
                       <p className="leading-5 pt-1">Lesson books</p>
                   </Link> */}
-                    <NavLink href="" classname="leading-5 pt-1">
+                    <NavLink href="#" classname="leading-5 pt-1">
                         Lesson books
                     </NavLink>
                 </div>
@@ -106,14 +106,14 @@ const Footer = () => {
                     {/* <Link href="">
                       <p className="pt-3">Privacy policy</p>
                   </Link> */}
-                    <NavLink href="" classname="pt-3">
+                    <NavLink href="#" classname="pt-3">
                         Privacy policy
                     </NavLink>
 
                     {/* <Link href="">
                       <p className="leading-4 pt-1">Terms of use</p>
                   </Link> */}
-                    <NavLink href="" classname="leading-4 pt-1">
+                    <NavLink href="#" classname="leading-4 pt-1">
                         Terms of use
                     </NavLink>
                 </div>

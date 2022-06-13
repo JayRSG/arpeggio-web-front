@@ -7,7 +7,7 @@ import GuestLayout from '@/components/Layouts/GuestLayout'
 import Home from '@/components/Home'
 
 export default function home() {
-    // const { user } = useAuth({ middleware: 'guest' })
+    
 
     return (
         <>
