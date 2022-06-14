@@ -58,7 +58,7 @@ const Navbar = () => {
                         </a>
                     </Link> */}
                         <NavLink
-                            href="/freeclasses"
+                            href="/freeClasses"
                             classname="hover:opacity-70 transition-all
                             duration-500">
                             Free Classes
@@ -209,7 +209,7 @@ const Navbar = () => {
                             {/* <Link href="/freeClasses">
                               <a>Free Classes</a>
                           </Link> */}
-                            <NavLink href="/freeclasses"> Free Classes</NavLink>
+                            <NavLink href="/freeClasses"> Free Classes</NavLink>
                         </li>
 
                         <li className="navlink hover:text-btn-color xl:text-base lg:text-base">
