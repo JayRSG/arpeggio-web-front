@@ -37,7 +37,7 @@ const LoginForm = () => {
     }
     return (
         <>
-            <div className='flex flex-col justify-center mt-3 flex-wrap'>
+            <div className="flex flex-col justify-center mt-3 flex-wrap">
                 {/* Session Status */}
                 <AuthSessionStatus className="mb-4" status={status} />
 
