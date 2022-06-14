@@ -83,11 +83,7 @@ const Social = () => {
         // console.log(callbackQuery);
         if (callbackQuery != '' && code != undefined) {
             //get user information from social provider from backend
-            /* social == 'facebook'
-                        ? 'api/login/facebook/callback' + '?' + callbackQuery
-                        : social == 'google'
-                        ? 'api/login/google/callback' + '?' + callbackQuery
-                        : '', */
+
             axios
                 .get(`api/login/${social}/callback` + '?' + callbackQuery)
                 .then(response => {
