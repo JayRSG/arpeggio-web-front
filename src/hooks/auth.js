@@ -85,15 +85,10 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     }
 
     const resendEmailVerification = ({ setStatus }) => {
-        axios
-            .post('api/email/verification-notification')
-            .then(response => {
-                setStatus(response.status)
-                console.log(response);
-            })
-            
-
-            
+        axios.post('api/email/verification-notification').then(response => {
+            setStatus(response.status)
+            console.log(response)
+        })
     }
 
     const logout = async () => {
@@ -104,6 +99,25 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         }
 
         window.location.pathname = '/'
+    }
+
+    const socialLoginRedirect = async (
+        provider,
+        setRedirect,
+        setErrors,
+        setStatus,
+    ) => {
+        await axios
+            .get(`/api/redirect/${provider}`)
+            .then(response => {
+                setStatus(response.status)
+                setRedirect(response?.data?.url)
+            })
+            .catch(error => {
+                if (error.response.status !== 422) throw error
+
+                setErrors(Object.values(error.response.data.errors).flat())
+            })
     }
 
     useEffect(() => {
@@ -120,5 +134,6 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         resetPassword,
         resendEmailVerification,
         logout,
+        socialLoginRedirect,
     }
 }
