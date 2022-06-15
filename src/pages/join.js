@@ -5,10 +5,10 @@ import Navbar from '@/components/Layouts/Navbar'
 import Loader from '@/components/Loader'
 import { useAuth } from '@/hooks/auth'
 import { useRouter } from 'next/router'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Join = () => {
-    const loading = useRef(true)
+    const [loading, setLoading] = useState(true)
     const [preventLoop, setPreventLoop] = useState(false)
     const { user } = useAuth({
         middleware: 'guest',
@@ -18,14 +18,14 @@ const Join = () => {
     useEffect(() => {
         console.log(user)
         if (user) {
-            loading.current = true
+            setLoading(true)
         }
 
         let t
         if (user === undefined) {
             t = setInterval(() => {
-                loading.current = false
-            }, 3000)
+                setLoading(false)
+            }, 2000)
         }
 
         return () => {
@@ -37,7 +37,7 @@ const Join = () => {
         <div>
             <title>Join</title>
             <Navbar />
-            {loading.current ? <Loader /> : <JoinComponent />}
+            {loading ? <Loader /> : <JoinComponent />}
             <Footer />{' '}
         </div>
     )

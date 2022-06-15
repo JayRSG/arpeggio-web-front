@@ -23,7 +23,7 @@ const AdminNav = () => {
                 </li>
 
                 <li className="navlink text-white text-2xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
-                    <Link href="/panel/student/backtrack">
+                    <Link href="/panel/admin/analytics">
                         <a
                             className={
                                 router.pathname === '/panel/admin/analytics'
@@ -36,10 +36,10 @@ const AdminNav = () => {
                 </li>
 
                 <li className="navlink text-white text-2xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
-                    <Link href="/panel/student/backtrack">
+                    <Link href="/panel/backtrack">
                         <a
                             className={
-                                router.pathname === '/panelbacktrack'
+                                router.pathname === '/panel/backtrack'
                                     ? 'bg-white text-black pr-10 pl-2 py-1'
                                     : ''
                             }>
@@ -83,19 +83,6 @@ const AdminNav = () => {
                                     : ''
                             }>
                             Students
-                        </a>
-                    </Link>
-                </li>
-
-                <li className="navlink text-white text-2xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
-                    <Link href="/panel/admin/instructors">
-                        <a
-                            className={
-                                router.pathname === '/panel/admin/instructors'
-                                    ? 'bg-white text-black pr-10 pl-2 py-1'
-                                    : ''
-                            }>
-                            Instructors
                         </a>
                     </Link>
                 </li>

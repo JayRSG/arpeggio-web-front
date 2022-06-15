@@ -1,6 +1,11 @@
+import AppLayout from '@/components/Layouts/AppLayout'
+
 const Messages = () => {
+    return (
+        <>
+            <AppLayout type="Admin"></AppLayout>
+        </>
+    )
+}
 
-    return <></>
-};
-
-export default Messages;
+export default Messages

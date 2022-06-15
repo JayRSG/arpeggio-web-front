@@ -4,10 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen, faCamera } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from 'react'
 import { loadProfilePicture } from '@/helpers/profileHelpers'
-import StudentNav from '@/components/panel/student/StudentNav'
-import Navbar from '@/components/Layouts/Navbar'
-import Footer from '@/components/Layouts/Footer'
+
 import { useAuth } from '@/hooks/auth'
+import AppLayout from '@/components/Layouts/AppLayout'
 
 const myprofile = () => {
     const { user } = useAuth({ middleware: 'auth' })
@@ -51,293 +50,287 @@ const myprofile = () => {
 
     return (
         <>
-            <title>My Profile</title>
-            <Navbar />
-            <div className="px-52 large:px-0 mobile:px-0">
-                <div className="flex font-body min-h-screen">
-                    <StudentNav />
-                    <div className="w-full min-h-screen">
-                        <h1 className="text-5xl font-title p-7 pl-20 font-bold large:text-center mobile:text-center large:pl-0 large:p-0 mobile:p-0 large:py-7 mobile:py-7 mobile:pl-0 pt-6">
-                            Profile
-                        </h1>
+            <AppLayout type="Determine">
+                <title>My Profile</title>
 
-                        <form className="w-full flex flex-col justify-center items-center flex-wrap">
-                            {/* profile pic */}
-                            <label className="w-60 h-60 rounded-full flex flex-col items-center mb-8 bg-white shadow-md tracking-wide uppercase border-2 border-solid border-main-color ease-linear transition-all duration-150">
-                                <div className="w-full h-full">
-                                    {/* <Image src={profilePictureBlob} width={200} height={200} layout='responsive' objectFit='cover' className='rounded-full' /> */}
-                                    <Image
-                                        src={profilePictureBlob}
-                                        width={200}
-                                        height={200}
-                                        layout="responsive"
-                                        objectFit="cover"
-                                        className="rounded-full"
-                                    />
-                                </div>
+                {/* <div className="px-52 large:px-0 mobile:px-0">
+                    <div className="flex font-body min-h-screen"> */}
+                <div className="w-full min-h-screen">
+                    <h1 className="text-5xl font-title p-7 pl-20 font-bold large:text-center mobile:text-center large:pl-0 large:p-0 mobile:p-0 large:py-7 mobile:py-7 mobile:pl-0 pt-6">
+                        Profile
+                    </h1>
 
-                                {/**
+                    <form className="w-full flex flex-col justify-center items-center flex-wrap">
+                        {/* profile pic */}
+                        <label className="w-60 h-60 rounded-full flex flex-col items-center mb-8 bg-white shadow-md tracking-wide uppercase border-2 border-solid border-main-color ease-linear transition-all duration-150">
+                            <div className="w-full h-full">
+                                {/* <Image src={profilePictureBlob} width={200} height={200} layout='responsive' objectFit='cover' className='rounded-full' /> */}
+                                <Image
+                                    src={profilePictureBlob}
+                                    width={200}
+                                    height={200}
+                                    layout="responsive"
+                                    objectFit="cover"
+                                    className="rounded-full"
+                                />
+                            </div>
+
+                            {/**
                 Attention, make a Proper Image container for displaying the profile picture instead of the Fa-User icon
               */}
 
-                                <div className="relative left-20 bottom-14 p-2 border-solid border-2 border-gray-300 rounded-full text-center">
-                                    <FontAwesomeIcon
-                                        icon={faCamera}
-                                        size="2x"
-                                        className=" text-blue-400 cursor-pointer transition-colors duration-500 hover:text-blue-200"
-                                    />
-                                </div>
-                                <input
-                                    id="profile_picture"
-                                    type="file"
-                                    className="hidden"
-                                    onChange={handleChange}
+                            <div className="relative left-20 bottom-14 p-2 border-solid border-2 border-gray-300 rounded-full text-center">
+                                <FontAwesomeIcon
+                                    icon={faCamera}
+                                    size="2x"
+                                    className=" text-blue-400 cursor-pointer transition-colors duration-500 hover:text-blue-200"
                                 />
-                                {/* <p>
+                            </div>
+                            <input
+                                id="profile_picture"
+                                type="file"
+                                className="hidden"
+                                onChange={handleChange}
+                            />
+                            {/* <p>
 								<Image src={file} id='output' height={200} width={200} layout='responsive' objectFit='cover'></Image>
 							</p> */}
-                            </label>
+                        </label>
 
-                            <div className="w-full flex flex-col justify-center px-16 tablet:pr-8 laptop:pr-4">
-                                {/* first name */}
-                                <label htmlFor="fname">First name</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="fname"
-                                        name="fname"
-                                        placeholder=""
-                                        defaultValue={user?.data?.first_name}
-                                        disabled={disabled}
-                                    />
+                        <div className="w-full flex flex-col justify-center px-16 tablet:pr-8 laptop:pr-4">
+                            {/* first name */}
+                            <label htmlFor="fname">First name</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="fname"
+                                    name="fname"
+                                    placeholder=""
+                                    defaultValue={user?.data?.first_name}
+                                    disabled={disabled}
+                                />
 
-                                    {/* <FontAwesomeIcon
+                                {/* <FontAwesomeIcon
 										icon={faPen}
 										size='2x'
 										className='cursor-pointer relative right-10 top-2'
 										onClick={disabledHandler}
 									/> */}
-                                </div>
-
-                                {/* last name */}
-                                <label htmlFor="lname">Last name</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="lname"
-                                        name="lname"
-                                        defaultValue={user?.data?.last_name}
-                                        placeholder=""
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                {/* Date of Birth */}
-                                <label htmlFor="dob">Date of Birth</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="dob"
-                                        name="dob"
-                                        defaultValue={user?.data?.dob}
-                                        placeholder=""
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                {/* username */}
-                                <label htmlFor="username">username</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="username"
-                                        name="username"
-                                        defaultValue={user?.data?.user_name}
-                                        placeholder=""
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                {/* email */}
-                                <label htmlFor="email">Email</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="email"
-                                        name="email"
-                                        defaultValue={user?.data?.email}
-                                        placeholder=""
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                {/* institution */}
-                                <label htmlFor="email">Institution</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="institution"
-                                        name="institution"
-                                        defaultValue={user?.data?.institute}
-                                        placeholder=""
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                {/* gender */}
-                                <label htmlFor="gender">Gender</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="gender"
-                                        name="gender"
-                                        defaultValue={user?.data?.gender}
-                                        placeholder=""
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                {/* occupation */}
-                                <label htmlFor="occupation">Occupation</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="occupation"
-                                        name="occupation"
-                                        defaultValue={user?.data?.occupation}
-                                        placeholder=""
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                {/* contact number */}
-                                <label htmlFor="contact">Contact number</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="contact"
-                                        name="contact"
-                                        defaultValue={
-                                            user?.data?.contact_number
-                                        }
-                                        placeholder=""
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                {/* country */}
-                                <label htmlFor="country">Country</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="country"
-                                        name="country"
-                                        defaultValue={user?.data?.country}
-                                        placeholder=""
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                {/* city */}
-                                <label htmlFor="city">City</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="city"
-                                        name="city"
-                                        defaultValue={user?.data?.city}
-                                        placeholder=""
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                {/* division */}
-                                <label htmlFor="division">Division</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="division"
-                                        name="division"
-                                        placeholder=""
-                                        defaultValue={user?.data?.division}
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                {/* Street address */}
-                                <label htmlFor="street">Street Address</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="street"
-                                        name="street"
-                                        defaultValue={
-                                            user?.data?.street_address
-                                        }
-                                        placeholder=""
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                {/* Social Account */}
-                                <label htmlFor="street">Social Account</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="social-account"
-                                        name="social-account"
-                                        defaultValue={
-                                            user?.data?.social_provider
-                                        }
-                                        placeholder=""
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                {/* Account Name */}
-                                <label htmlFor="street">Account Name</label>
-                                <div className="flex w-full">
-                                    <input
-                                        className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
-                                        type="text"
-                                        id="acoount-name"
-                                        name="acoount-name"
-                                        defaultValue={user?.data?.social_name}
-                                        placeholder=""
-                                        disabled={disabled}
-                                    />
-                                </div>
-
-                                <div className="flex justify-between my-8">
-                                    <a className="text-blue-500 text-lg font-bold">
-                                        Change Password
-                                    </a>
-                                    <a
-                                        className="btn rounded-lg bg-blue-500 text-xl px-10"
-                                        onClick={disabledHandler}>
-                                        Edit
-                                    </a>
-                                </div>
                             </div>
-                        </form>
-                    </div>
+
+                            {/* last name */}
+                            <label htmlFor="lname">Last name</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="lname"
+                                    name="lname"
+                                    defaultValue={user?.data?.last_name}
+                                    placeholder=""
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            {/* Date of Birth */}
+                            <label htmlFor="dob">Date of Birth</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="dob"
+                                    name="dob"
+                                    defaultValue={user?.data?.dob}
+                                    placeholder=""
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            {/* username */}
+                            <label htmlFor="username">username</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                    defaultValue={user?.data?.user_name}
+                                    placeholder=""
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            {/* email */}
+                            <label htmlFor="email">Email</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="email"
+                                    name="email"
+                                    defaultValue={user?.data?.email}
+                                    placeholder=""
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            {/* institution */}
+                            <label htmlFor="email">Institution</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="institution"
+                                    name="institution"
+                                    defaultValue={user?.data?.institute}
+                                    placeholder=""
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            {/* gender */}
+                            <label htmlFor="gender">Gender</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="gender"
+                                    name="gender"
+                                    defaultValue={user?.data?.gender}
+                                    placeholder=""
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            {/* occupation */}
+                            <label htmlFor="occupation">Occupation</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="occupation"
+                                    name="occupation"
+                                    defaultValue={user?.data?.occupation}
+                                    placeholder=""
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            {/* contact number */}
+                            <label htmlFor="contact">Contact number</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="contact"
+                                    name="contact"
+                                    defaultValue={user?.data?.contact_number}
+                                    placeholder=""
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            {/* country */}
+                            <label htmlFor="country">Country</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="country"
+                                    name="country"
+                                    defaultValue={user?.data?.country}
+                                    placeholder=""
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            {/* city */}
+                            <label htmlFor="city">City</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="city"
+                                    name="city"
+                                    defaultValue={user?.data?.city}
+                                    placeholder=""
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            {/* division */}
+                            <label htmlFor="division">Division</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="division"
+                                    name="division"
+                                    placeholder=""
+                                    defaultValue={user?.data?.division}
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            {/* Street address */}
+                            <label htmlFor="street">Street Address</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="street"
+                                    name="street"
+                                    defaultValue={user?.data?.street_address}
+                                    placeholder=""
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            {/* Social Account */}
+                            <label htmlFor="street">Social Account</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="social-account"
+                                    name="social-account"
+                                    defaultValue={user?.data?.social_provider}
+                                    placeholder=""
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            {/* Account Name */}
+                            <label htmlFor="street">Account Name</label>
+                            <div className="flex w-full">
+                                <input
+                                    className="h-12 w-full font-normal focus:outline-none text-sm bg-main-color mb-4 rounded-md shadow-md pl-4"
+                                    type="text"
+                                    id="acoount-name"
+                                    name="acoount-name"
+                                    defaultValue={user?.data?.social_name}
+                                    placeholder=""
+                                    disabled={disabled}
+                                />
+                            </div>
+
+                            <div className="flex justify-between my-8">
+                                <a className="text-blue-500 text-lg font-bold">
+                                    Change Password
+                                </a>
+                                <a
+                                    className="btn rounded-lg bg-blue-500 text-xl px-10"
+                                    onClick={disabledHandler}>
+                                    Edit
+                                </a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </div>
-            <Footer />
+                {/* </div>
+                </div> */}
+            </AppLayout>
         </>
     )
 }

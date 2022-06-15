@@ -1,6 +1,11 @@
-const Analytics = () => {
+import AppLayout from "@/components/Layouts/AppLayout"
 
-    return <></>
+const Analytics = () => {
+    return (
+        <>
+            <AppLayout type="Admin"></AppLayout>
+        </>
+    )
 }
 
-export default Analytics;
+export default Analytics
