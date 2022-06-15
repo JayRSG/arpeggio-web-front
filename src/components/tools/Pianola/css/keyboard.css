@@ -1,0 +1,111 @@
+rect {
+  stroke-width:1;
+  stroke:rgb(200, 200, 200)
+}
+
+rect.white-key {
+  fill:rgb(255, 255, 255);
+}
+
+rect.black-key {
+  fill:rgb(0, 0, 0);
+}
+
+/* for non-webkit browsers */
+rect.white-key.selected {
+  fill:rgb(255,255,255);
+}
+
+rect.black-key.selected {
+  fill:rgb(0,0,0);
+}
+
+.chord-keyboard > g > g > circle.key {
+  fill:rgb(255,176,38);
+  fill-opacity:0;
+}
+
+.scale-keyboard > g > g > circle.key {
+  fill:rgb(89, 130, 251);
+  fill-opacity:0;
+}
+
+/* for webkit browsers */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  rect.white-key.selected {
+    fill:url(#white-press);
+  }
+
+  rect.black-key.selected {
+    fill:url(#black-press);
+  }
+
+  .chord-keyboard > g > g > circle.key {
+    fill:url(#chord-spot);
+    fill-opacity:0;
+  }
+
+  .scale-keyboard > g > g > circle.key {
+    fill:url(#scale-spot);
+    fill-opacity:0;
+  }
+}
+
+.chord-keyboard > g > g > circle.key.selected {
+  fill-opacity:1;
+}
+
+.scale-keyboard > g > g > circle.key.selected {
+  fill-opacity:1;
+}
+
+
+/* one day, it might be useful to highlight middle-c
+rect.white-key.C1 {
+  stroke-width:2;
+  stroke:rgb(255,75,24);
+}
+*/
+
+/* gradiant colors ===================================
+   =================================================== */
+
+#white-press > .press-start {
+  stop-color:rgb(255,255,255);
+  stop-opacity:1;
+}
+
+#white-press > .press-end {
+  stop-color:rgb(230,230,230);
+  stop-opacity:1;
+}
+
+#black-press > .press-start {
+  stop-color:rgb(0,0,0);
+  stop-opacity:1;
+}
+
+#black-press > .press-end {
+  stop-color:rgb(125,125,125);
+  stop-opacity:1;
+}
+
+#chord-spot > .press-start {
+  stop-color:rgb(255,176,38);
+  stop-opacity:1;
+}
+
+#chord-spot > .press-end {
+  stop-color:rgb(245,166,28);
+  stop-opacity:1;
+}
+
+#scale-spot > .press-start {
+  stop-color:rgb(89, 130, 251);
+  stop-opacity:1;
+}
+
+#scale-spot > .press-end {
+  stop-color:rgb(29,118,217);
+  stop-opacity:1;
+}

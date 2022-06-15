@@ -1,0 +1,52 @@
+div#main {
+  margin-top: 2.5%;
+}
+
+span.dots {
+  float: right;
+  margin-right: 0.5em;
+}
+
+h1.title {
+  font-size: 3.5em;
+}
+
+h4.groups {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 400;
+}
+
+div.chord-header {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.heading-icon {
+  float: right;
+  margin-right: 1%
+}
+
+.last-icon {
+  margin-right: 2.5%;
+}
+
+.container {
+  padding-bottom: 15px;
+}
+
+.no-break {
+  page-break-inside: avoid;
+}
+
+a {
+  color: #FFA61C;
+}
+
+a:hover {
+  color: #ff7518;
+}
+
+svg#svg-defs {
+  height: 0px;
+}

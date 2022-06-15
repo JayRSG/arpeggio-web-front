@@ -7,6 +7,7 @@ import Head from 'next/head'
 // import { logIn } from '../../util/auth'
 import axios from '@/lib/axios'
 import { useAuth } from '@/hooks/auth'
+import Loader from '@/components/Loader'
 
 const Social = () => {
     const router = useRouter()
@@ -117,7 +118,9 @@ const Social = () => {
                 </Head>
 
                 <Navbar />
-                <main className="flex-1 flex flex-col justify-center items-center"></main>
+                <main className="flex-1 flex flex-col justify-center items-center">
+                    <Loader />
+                </main>
 
                 <Footer />
             </div>

@@ -1,24 +1,41 @@
 // import Navigation from '@/components/Layouts/Navigation'
 import { useAuth } from '@/hooks/auth'
+import { useState, useEffect } from 'react'
+import Loader from '@/components/Loader'
+import { useRouter } from 'next/router'
 
-const AppLayout = ({ header, children }) => {
+const AppLayout = ({ type, children }) => {
     const { user } = useAuth({ middleware: 'auth' })
+    const [loading, setLoading] = useState(false)
+    const router = useRouter()
+    useEffect(() => {
+        if (!user) {
+            setLoading(true)
+        } else if (user && user?.data?.user_type == type) {
+            setLoading(false)
+        }
 
-    return (
-        <div className="min-h-screen bg-gray-100">
-            {/* <Navigation user={user} /> */}
+        if (user?.data?.user_type != type) {
+            router.push('/panel')
+        }
+    }, [user])
 
-            {/* Page Heading */}
-            <header className="bg-white shadow">
-                <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {header}
-                </div>
-            </header>
-
-            {/* Page Content */}
-            <main>{children}</main>
-        </div>
-    )
+    if (!loading) {
+        return (
+            <div>
+                {/* Page Content */}
+                <main>{children}</main>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <main>
+                    <Loader />
+                </main>
+            </div>
+        )
+    }
 }
 
 export default AppLayout
