@@ -9,19 +9,28 @@ import { useEffect, useRef, useState } from 'react'
 
 const Join = () => {
     const loading = useRef(true)
+    const [preventLoop, setPreventLoop] = useState(false)
     const { user } = useAuth({
         middleware: 'guest',
         redirectIfAuthenticated: '/',
     })
 
     useEffect(() => {
+        console.log(user)
         if (user) {
             loading.current = true
-        } else {
-            loading.current = false
         }
 
-        console.log(user)
+        let t
+        if (user === undefined) {
+            t = setInterval(() => {
+                loading.current = false
+            }, 3000)
+        }
+
+        return () => {
+            clearInterval(t)
+        }
     }, [user])
 
     return (
