@@ -1,8 +1,14 @@
+import { Spinner } from './SVGs'
+
 const Loader = () => {
-	return (
-		<div className='w-full min-h-screen text-main-color'>
-			<div className='flex justify-center items-center min-h-screen '>
-				<svg className='animate-spin' xmlns='http://www.w3.org/2000/svg' width='281.693' height='93.71' viewBox='0 0 281.693 93.71'>
+    return (
+        <div className="w-full min-h-screen text-main-color">
+            <div className="flex flex-col justify-center items-center min-h-screen ">
+                <Spinner />
+                <p className="text-black text-lg pl-2 font-medium">
+                    Loading...
+                </p>
+                {/* <svg className='animate-spin' xmlns='http://www.w3.org/2000/svg' width='281.693' height='93.71' viewBox='0 0 281.693 93.71'>
 					<g id='Group_477' data-name='Group 477' transform='translate(-2668.821 615.66)'>
 						<path
 							id='Path_283'
@@ -1077,10 +1083,10 @@ const Loader = () => {
 							fill='#564689'
 						/>
 					</g>
-				</svg>
-			</div>
-		</div>
-	);
-};
+				</svg> */}
+            </div>
+        </div>
+    )
+}
 
-export default Loader;
+export default Loader
