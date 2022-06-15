@@ -107,6 +107,11 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         setErrors,
         setStatus,
     ) => {
+        await csrf()
+
+        setErrors([])
+        setStatus(null)
+
         await axios
             .get(`/api/redirect/${provider}`)
             .then(response => {
