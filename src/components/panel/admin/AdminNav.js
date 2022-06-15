@@ -69,7 +69,7 @@ const AdminNav = () => {
                                     ? 'bg-white text-black pr-10 pl-2 py-1'
                                     : ''
                             }>
-                            Add Video
+                            Video List
                         </a>
                     </Link>
                 </li>

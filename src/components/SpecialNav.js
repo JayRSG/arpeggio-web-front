@@ -222,13 +222,13 @@ const SpecialNav = props => {
                                     <Menu.Item>
                                         {({ active }) => (
                                             <MyLink
-                                                href="/panel/admin/addVideo"
+                                                href="/panel/admin/videoList"
                                                 className={`${
                                                     !active
                                                         ? ' text-white'
                                                         : 'text-black'
                                                 } group flex rounded-md items-center w-full px-2 py-2 text-sm`}>
-                                                Add Video
+                                                Video List
                                             </MyLink>
                                         )}
                                     </Menu.Item>

@@ -22,7 +22,11 @@ const AppLayout = ({ type, children }) => {
             setLoading(false)
         } else if (user?.data?.user_type != type) {
             setLoading(true)
-            router.push('/panel')
+            if (user?.data?.user_type == 'Student') {
+                router.push('/panel/student')
+            } else if (user?.data?.user_type == 'Admin') {
+                router.push('/panel/admin')
+            }
         }
     }, [user])
 
