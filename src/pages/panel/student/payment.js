@@ -1,6 +1,6 @@
-import Navbar from "../../../components/Navbar";
-import Footer from "../../../components/Footer";
-import StudentNav from "../../../components/panel/student/StudentNav";
+import Footer from "@/components/Layouts/Footer";
+import Navbar from "@/components/Layouts/Navbar";
+import StudentNav from "@/components/panel/student/StudentNav";
 
 const payment = () => {
 	return (

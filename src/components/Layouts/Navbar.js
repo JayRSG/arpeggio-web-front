@@ -8,7 +8,7 @@ import MediaNav from '../MediaNav'
 import NavLink from '../NavLink'
 import Button from '../Button'
 import { useAuth } from '@/hooks/auth'
-// import { getCurrentBreakPoint, useWidth } from "../helpers/screensRes";
+import { getCurrentBreakPoint, useWidth } from '@/helpers/screensRes'
 
 const Navbar = () => {
     const [isSideBarOpen, setisSideBarOpen] = useState(false)
@@ -117,7 +117,6 @@ const Navbar = () => {
                         </li>
                     ) : (
                         <SpecialNav
-                            user_name={user?.data?.user_name}
                             className="w-40 text-center pt-4 z-50"
                             className1="text-2xl"
                         />
@@ -135,14 +134,14 @@ const Navbar = () => {
     }
 
     //check if mobile display size, if not closes the sidebar if open
-    // function getSideBarState() {
-    //   getCurrentBreakPoint() != "mobile" && isSideBarOpen ? showSideBar() : "";
-    // }
-    //sidebaropen closed on bigger screen size resizing
-    // useEffect(() => {
-    //   window.addEventListener("resize", getSideBarState);
-    //   return () => window.removeEventListener("resize", getSideBarState);
-    // }, [getSideBarState]);
+    function getSideBarState() {
+        getCurrentBreakPoint() != 'mobile' && isSideBarOpen ? showSideBar() : ''
+    }
+    // sidebaropen closed on bigger screen size resizing
+    useEffect(() => {
+        window.addEventListener('resize', getSideBarState)
+        return () => window.removeEventListener('resize', getSideBarState)
+    }, [getSideBarState])
 
     //check if clicked outside sidebar while it is open, closes it if so
     function checkSideBarClick(e) {
@@ -183,7 +182,6 @@ const Navbar = () => {
                             </Link>
                         ) : (
                             <SpecialNav
-                                user_name={user?.data?.user_name}
                                 className="w-28 text-center relative top-14 right-8 z-50 md:hidden sm:hidden"
                                 className1="text-base"
                             />
