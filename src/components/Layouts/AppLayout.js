@@ -37,8 +37,8 @@ const AppLayout = ({ type, children }) => {
             </header>
             {/* Page Content */}
             <main>
-                <div className="px-52 large:px-0 mobile:px-0 3k:px-28 laptop:px-28 tablet:px-28 font-body">
-                    <div className="flex w-full min-h-screen">
+                <div className="px-52 2xl:px-28 xl:px-28 lg:px-12 md:px-0 sm:px-0">
+                    <div className="flex font-body min-h-screen">
                         {!loading &&
                         (type == 'Admin' || type == 'Determine') &&
                         user?.data?.user_type == 'Admin' ? (
@@ -52,7 +52,9 @@ const AppLayout = ({ type, children }) => {
                         )}
 
                         {!loading ? (
-                            <div className="">{children}</div>
+                            <div className="w-full min-h-screen">
+                                {children}
+                            </div>
                         ) : (
                             <Loader />
                         )}
