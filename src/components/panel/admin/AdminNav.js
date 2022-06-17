@@ -7,9 +7,9 @@ const AdminNav = () => {
     const router = useRouter()
 
     return (
-        <div className="font-body min-h-screen 2xl:w-1/5 xl:w-1/4 lg:w-2/5">
-            <ul className="md:hidden sm:hidden flex flex-wrap flex-col top-16 w-full h-full bg-btn-color px-8 lg:pr-4 lg:pl-4 lg:px-0 xl:pr-4 xl:pl-4 xl:px-0">
-                <li className="navlink text-white text-2xl lg:text-sm xl:text-base py-8 hover:opacity-80 drop-shadow-md">
+        <div className="font-body min-h-screen w-117 2xl:w-117 lg:w-2/5 md:hidden">
+            <ul className="flex flex-col top-16 w-full h-full bg-btn-color px-8 lg:pr-4 lg:pl-4 lg:px-0 xl:pr-4 xl:pl-4 xl:px-0">
+                <li className="navlink text-white text-xl lg:text-sm xl:text-base py-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/admin">
                         <a
                             className={
@@ -22,7 +22,7 @@ const AdminNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/admin/analytics">
                         <a
                             className={
@@ -35,7 +35,7 @@ const AdminNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/backtrack">
                         <a
                             className={
@@ -48,7 +48,7 @@ const AdminNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/admin/courses">
                         <a
                             className={
@@ -61,7 +61,7 @@ const AdminNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl lg:text-sm xl:text-base pt-8 pb-6 -mt-8 hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl lg:text-sm xl:text-base pt-8 pb-6 -mt-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/admin/videoList">
                         <a
                             className={
@@ -74,7 +74,7 @@ const AdminNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/admin/students">
                         <a
                             className={
@@ -87,7 +87,7 @@ const AdminNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/admin/announcements">
                         <a
                             className={
@@ -100,7 +100,7 @@ const AdminNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/tools">
                         <a
                             className={
@@ -113,7 +113,7 @@ const AdminNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/admin/messages">
                         <a
                             className={
@@ -126,7 +126,7 @@ const AdminNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl lg:text-sm xl:text-base py-8 -mt-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/myprofile">
                         <a
                             className={

@@ -267,12 +267,12 @@ const VideoList = () => {
     return (
         <div className="flex flex-col">
             <div className="flex justify-between items-center">
-                <h1 className="text-5xl p-8 font-bold font-title tablet:text-3xl mobile:text-xl">
+                <h1 className="text-5xl p-8 font-bold font-title lg:text-3xl sm:text-xl">
                     Videos
                 </h1>
 
                 <button
-                    className="btn bg-btn-color text-black shadow-md pb-12 hover:scale-105 transition-all transform duration-500 tablet:pb-10 tablet:px-8 pt-4 px-10 h-12 font-bold text-2xl tablet:text-xl text-center rounded-md my-8 large:mr-4 mobile:text-xl mobile:px-6 mobile:mr-4 mobile:pb-10 mobile:py-2"
+                    className="btn bg-btn-color text-black shadow-md pb-12 hover:scale-105 transition-all transform duration-500 lg:pb-10 lg:px-8 pt-4 px-10 h-12 font-bold text-2xl lg:text-xl text-center rounded-md my-8 md:mr-4 sm:text-xl sm:px-6 sm:mr-4 sm:pb-10 sm:py-2"
                     onClick={() => {
                         setModalData(
                             <AddVideo addVideoUpload={addVideoUpload} />,
@@ -285,7 +285,7 @@ const VideoList = () => {
 
             <div>
                 <select
-                    className="ml-4 mb-1 outline-none text-lg w-1/5 font-bold 3xl:w-117 3k:w-117 laptop:w-2/5 tablet:w-3/5 large:w-2/5"
+                    className="ml-4 mb-1 outline-none text-lg w-1/5 font-bold 2xl:w-117 xl:w-2/5 lg:w-3/5 md:w-2/5"
                     value={typeHook}
                     onChange={e => {
                         setTypeHook(e.target.value)
@@ -315,8 +315,8 @@ const VideoList = () => {
                         <div key={ind}>
                             <hr className="bg-black h-101 mb-8" />
 
-                            <div className="flex justify-between tablet:flex-col tablet:items-center large:flex-col large:items-center mobile:flex-col mobile:items-center">
-                                <div className="w-52 tablet:w-80 h-32 tablet:h-44 ml-4 tablet:ml-0 large:w-119 large:h-72 large:ml-0 mobile:w-64 mobile:h-36 mobile:ml-0">
+                            <div className="flex justify-between lg:flex-col lg:items-center md:flex-col md:items-center sm:flex-col sm:items-center">
+                                <div className="w-52 lg:w-80 h-32 lg:h-44 ml-4 lg:ml-0 md:w-119 md:h-72 md:ml-0 sm:w-64 sm:h-36 sm:ml-0">
                                     <Image
                                         src={data.thumbnail_url}
                                         width={1280}
@@ -327,7 +327,7 @@ const VideoList = () => {
                                     />
                                 </div>
 
-                                <div className="flex flex-col w-117 laptop:w-1/5 tablet:w-3/4 tablet:mt-8 large:w-112 large:mt-8 mobile:w-4/5 mobile:mt-8">
+                                <div className="flex flex-col w-117 xl:w-1/5 lg:w-3/4 lg:mt-8 md:w-112 md:mt-8 sm:w-4/5 sm:mt-8">
                                     <h1
                                         ref={element =>
                                             titleRef.current.push(element)
@@ -367,11 +367,11 @@ const VideoList = () => {
                                     />
                                 </div>
 
-                                <h1 className="text-2xl font-bold self-center laptop:text-base tablet:mt-8 large:mt-8 mobile:mt-8">
+                                <h1 className="text-2xl font-bold self-center xl:text-base lg:mt-8 md:mt-8 sm:mt-8">
                                     {extract_date(data.date_created)}
                                 </h1>
 
-                                <div className="flex justify-between w-1/6 items-center laptop:w-1/4 tablet:w-1/2 tablet:mt-8 large:w-2/5 large:mt-8 mobile:w-3/5 mobile:mt-8">
+                                <div className="flex justify-between w-1/6 items-center xl:w-1/4 lg:w-1/2 lg:mt-8 md:w-2/5 md:mt-8 sm:w-3/5 sm:mt-8">
                                     {/* Edit Button */}
                                     <div
                                         ref={btn =>
@@ -538,11 +538,11 @@ const VideoList = () => {
                         </div>
                     ))
             ) : typeHook == '' ? (
-                <div className="flex justify-between tablet:flex-col tablet:items-center large:flex-col large:items-center mobile:flex-col mobile:items-center text-center pl-5 pt-10">
+                <div className="flex justify-between lg:flex-col lg:items-center md:flex-col md:items-center sm:flex-col sm:items-center text-center pl-5 pt-10">
                     Select Video Type
                 </div>
             ) : (
-                <div className="flex justify-between tablet:flex-col tablet:items-center large:flex-col large:items-center mobile:flex-col mobile:items-center text-center pl-5 pt-10">
+                <div className="flex justify-between lg:flex-col lg:items-center md:flex-col md:items-center sm:flex-col sm:items-center text-center pl-5 pt-10">
                     No Data Found
                 </div>
             )}
