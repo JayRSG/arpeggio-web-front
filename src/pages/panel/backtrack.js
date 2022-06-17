@@ -12,9 +12,7 @@ const backtrack = () => {
             <AppLayout type="Determine">
                 <title>Backing Track</title>
 
-                <div className="px-52 large:px-0 mobile:px-0">
-                    <BackingTrack />
-                </div>
+                <BackingTrack />
             </AppLayout>
         </>
     )
