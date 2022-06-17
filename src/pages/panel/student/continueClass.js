@@ -7,9 +7,9 @@ const continueClass = () => {
             <AppLayout type="Student">
                 <title>Course</title>
 
-                <div className="flex justify-between h-1/2 w-full laptop:flex-col">
-                    <div className="flex flex-col pt-7 w-1/2 laptop:w-full">
-                        <h1 className="text-5xl font-title font-bold p-7 pl-16 laptop:text-center">
+                <div className="flex justify-between h-1/2 w-full xl:flex-col">
+                    <div className="flex flex-col pt-7 w-1/2 xl:w-full">
+                        <h1 className="text-5xl font-title font-bold p-7 pl-16 xl:text-center">
                             Course Name
                         </h1>
                         <div className="w-full pt-4 pl-16">
@@ -23,7 +23,7 @@ const continueClass = () => {
                             />
                         </div>
                     </div>
-                    <div className="flex flex-col w-117 h-full mt-20 laptop:w-1/2 laptop:pl-16">
+                    <div className="flex flex-col w-117 h-full mt-20 xl:w-1/2 xl:pl-16">
                         <p className="text-lg font-bold pl-8">8 Lessons</p>
                         <div className="bg-main-color w-full h-full font-bold text-lg overflow-y-scroll">
                             <h3 className="pl-8 py-4 cursor-pointer">
@@ -53,11 +53,11 @@ const continueClass = () => {
                         </div>
                     </div>
                 </div>
-                <a className="btn rounded-lg bg-blue-500 text-base py-6 ml-16 relative bottom-12 3k:bottom-24 hover:opacity-70 transition-all duration-500">
+                <a className="btn rounded-lg bg-blue-500 text-base py-6 ml-16 relative bottom-12 2xl:bottom-24 hover:opacity-70 transition-all duration-500">
                     Mark Complete
                 </a>
                 <hr className="bg-black h-100 w-112" />
-                <div className="flex justify-between w-2/5 pl-16 pt-4 3k:w-3/5">
+                <div className="flex justify-between w-2/5 pl-16 pt-4 2xl:w-3/5">
                     <a className="text-2xl font-bold cursor-pointer hover:opacity-80 transition-all duration-500">
                         Notes
                     </a>
