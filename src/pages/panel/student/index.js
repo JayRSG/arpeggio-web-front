@@ -12,18 +12,19 @@ import {
 
 import Image from 'next/image'
 import AppLayout from '@/components/Layouts/AppLayout'
+import Button from '@/components/Button'
 
 export default function Home() {
     return (
         <AppLayout type="Student">
             <title>Arpeggio</title>
 
-            <h1 className="text-5xl font-title p-7 pl-16 font-bold large:text-center mobile:text-center large:pl-0 large:p-0 mobile:p-0 large:py-7 mobile:py-7 mobile:pl-0">
+            <h1 className="text-5xl font-title p-7 pl-16 font-bold md:text-center sm:text-center md:pl-0 md:p-0 sm:p-0 md:py-7 sm:py-7 sm:pl-0">
                 Courses
             </h1>
 
-            <div className="grid grid-cols-2 ml-16 3k:grid-cols-2 laptop:grid-cols-2 tablet:grid-cols-2 large:grid-cols-1 mobile:grid-cols-1 gap-8 3xl:gap-4 items-center w-full my-8">
-                <div className="w-3/5 large:px-36 mobile:px-9 border-2 rounded hover:border-btn-color hover:scale-105 transform transition-all duration-500 cursor-pointer">
+            <div className="grid grid-cols-2 ml-16 md:ml-0 lg:grid-cols-1 gap-8 3xl:gap-4 items-center w-full my-8 lg:px-16 lg:ml-0 md:px-28 sm:px-12 xs:px-6">
+                <div className="border-2 rounded hover:border-btn-color hover:scale-105 transform transition-all duration-500 cursor-pointer">
                     <div className="flex flex-col bg-main-color px-6 w-full shadow-md rounded">
                         <div className="w-full pt-4">
                             <Image
@@ -36,7 +37,7 @@ export default function Home() {
                             />
                         </div>
 
-                        <h2 className="text-center mt-4 text-3xl laptop:text-2xl tablet:text-2xl mobile:text-base font-bold text-btn-color">
+                        <h2 className="text-center mt-4 text-3xl xl:text-2xl lg:text-2xl sm:text-base font-bold text-btn-color">
                             Course Name
                         </h2>
 
@@ -47,7 +48,7 @@ export default function Home() {
                                     size="2x"
                                     className="text-btn-color mr-2"
                                 />
-                                <p className="laptop:text-sm tablet:text-sm mobile:text-sm">
+                                <p className="xl:text-sm lg:text-sm sm:text-sm">
                                     50 students
                                 </p>
                             </div>
@@ -58,7 +59,7 @@ export default function Home() {
                                     size="2x"
                                     className="text-btn-color mr-2"
                                 />
-                                <p className="laptop:text-sm tablet:text-sm mobile:text-sm">
+                                <p className="xl:text-sm lg:text-sm sm:text-sm">
                                     8 videos
                                 </p>
                             </div>
@@ -71,7 +72,7 @@ export default function Home() {
                                     size="2x"
                                     className="text-btn-color mr-2"
                                 />
-                                <p className="laptop:text-sm tablet:text-sm mobile:text-sm">
+                                <p className="xl:text-sm lg:text-sm sm:text-sm">
                                     2 months
                                 </p>
                             </div>
@@ -89,19 +90,19 @@ export default function Home() {
                                         <path d="M7.5,21H2V9h5.5V21z M14.75,3h-5.5v18h5.5V3z M22,11h-5.5v10H22V11z" />
                                     </g>
                                 </svg>
-                                <p className="ml-2 laptop:text-sm tablet:text-sm mobile:text-sm">
+                                <p className="ml-2 xl:text-sm lg:text-sm sm:text-sm">
                                     Beginner
                                 </p>
                             </div>
                         </div>
 
-                        <div className="text-center mt-4 text-2xl laptop:text-xl tablet:text-xl mobile:text-xl font-bold hover:opacity-70 transition-all duration-500">
+                        <div className="text-center mt-4 text-2xl xl:text-xl lg:text-xl sm:text-xl font-bold hover:opacity-70 transition-all duration-500">
                             Certificate
                         </div>
 
-                        <button className="btn bg-btn-color px-0 py-0 w-3/5 h-12 font-bold text-xl 3xl:text-base laptop:text-base laptop:w-112 3xl:w-112 rounded-md self-center my-8 tablet:text-sm large:text-sm large:w-1/2 mobile:text-sm hover:opacity-80 transition-all duration-500">
+                        <Button className="lg:w-44 bg-btn-color text-xl rounded-md self-center my-8 lg:text-sm md:text-sm sm:text-sm hover:opacity-80 transition-all duration-500">
                             START COURSE
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </div>

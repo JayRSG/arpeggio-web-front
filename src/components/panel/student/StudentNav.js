@@ -10,9 +10,9 @@ const StudentNav = () => {
     const router = useRouter()
 
     return (
-        <div className="font-body min-h-screen">
-            <ul className="large:hidden mobile:hidden flex flex-wrap flex-col top-16 w-full tablet:w-4/5 h-full bg-btn-color px-8 tablet:pr-12 tablet:pl-4 tablet:px-0 laptop:pr-4 laptop:pl-4 laptop:px-0">
-                <li className="navlink text-white text-2xl tablet:text-base laptop:text-base py-8 hover:opacity-80 drop-shadow-md">
+        <div className="font-body min-h-screen w-117 2xl:w-117 lg:w-2/5 md:hidden">
+            <ul className="flex flex-col top-16 w-full h-full bg-btn-color px-8 lg:pr-4 lg:pl-4 lg:px-0 xl:pr-4 xl:pl-4 xl:px-0">
+                <li className="navlink text-white text-xl lg:text-sm xl:text-base py-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/student">
                         <a
                             className={
@@ -25,7 +25,7 @@ const StudentNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl tablet:text-base laptop:text-base pb-8 hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl xl:text-base pb-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/backtrack">
                         <a
                             className={
@@ -38,7 +38,7 @@ const StudentNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl tablet:text-base laptop:text-base pb-8 hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl xl:text-base pb-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/student/announcement">
                         <a
                             className={
@@ -52,7 +52,7 @@ const StudentNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl tablet:text-base laptop:text-base pb-8 hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl xl:text-base pb-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/tools">
                         <a
                             className={
@@ -65,7 +65,7 @@ const StudentNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl tablet:text-base laptop:text-base pb-8 hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl xl:text-base pb-8 hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/myprofile">
                         <a
                             className={
@@ -78,7 +78,7 @@ const StudentNav = () => {
                     </Link>
                 </li>
 
-                <li className="navlink text-white text-2xl tablet:text-base laptop:text-base hover:opacity-80 drop-shadow-md">
+                <li className="navlink text-white text-xl xl:text-base hover:opacity-80 drop-shadow-md">
                     <Link href="/panel/student/payment">
                         <a
                             className={
@@ -93,7 +93,7 @@ const StudentNav = () => {
             </ul>
 
             {/* the menu button  */}
-            <button
+            {/* <button
                 onClick={() => {
                     showSideBar()
                 }}
@@ -103,7 +103,7 @@ const StudentNav = () => {
                     size="2x"
                     className="text-black"
                 />
-            </button>
+            </button> */}
         </div>
     )
 }
