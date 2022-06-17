@@ -3,6 +3,7 @@ import guitar_chords from '@/lib/guitar.json'
 import ukulele_chords from '@/lib/ukulele.json'
 import instruments from '@/lib/instruments.json'
 import Chord from '@tombatossals/react-chords/lib/Chord'
+import Button from '../Button'
 
 const GuitarChords = () => {
     //State handles enabling key after instrument selection and suffix after key selection
@@ -253,9 +254,9 @@ const GuitarChords = () => {
             <div className="font-body w-full">
                 <hr className="bg-black mb-4 h-100" />
 
-                <div className="flex justify-evenly 3k:justify-around">
+                <div className="flex justify-around w-full">
                     {/* suffixes */}
-                    <div className="flex ml-20 mt-16 3xl:ml-8 3k:ml-8 laptop:ml-0 tablet:ml-0">
+                    <div className="flex ml-20 mt-16 2xl:ml-8 xl:ml-4 w-1/5">
                         <div
                             className={
                                 selectedInstrument == false &&
@@ -264,7 +265,7 @@ const GuitarChords = () => {
                                     : 'flex flex-col'
                             }>
                             {select_key.current ? (
-                                <h1 className="font-bold text-3xl mb-4 3k:text-2xl laptop:text-base tablet:text-xs">
+                                <h1 className="font-bold text-3xl my-4 2xl:text-2xl xl:text-base lg:text-xs">
                                     Chords
                                 </h1>
                             ) : (
@@ -275,8 +276,8 @@ const GuitarChords = () => {
                                       <p
                                           className={
                                               select_suffix.current == suffix
-                                                  ? 'bg-blue-500 text-white text-3xl 3k:text-2xl laptop:text-base tablet:text-xs cursor-pointer hover:text-blue-500'
-                                                  : 'text-3xl 3k:text-2xl laptop:text-base tablet:text-xs cursor-pointer hover:text-blue-500'
+                                                  ? 'bg-blue-500 text-white text-3xl 2xl:text-2xl xl:text-base lg:text-xs cursor-pointer hover:text-blue-500'
+                                                  : 'text-3xl 2xl:text-2xl xl:text-base lg:text-xs cursor-pointer hover:text-blue-500'
                                           }
                                           key={suffix}
                                           onClick={() => {
@@ -296,23 +297,23 @@ const GuitarChords = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col w-1/2">
+                    <div className="flex flex-col w-3/5">
                         {/* keys */}
                         <div
                             className={
                                 selectedInstrument == false
                                     ? disabledKeyClassName
-                                    : 'flex mt-8 justify-between w-full'
+                                    : 'flex mt-8 justify-evenly w-full lg:pr-4 md:pr-0'
                             }>
-                            <h1 className="font-bold text-3xl pr-2 3k:text-2xl laptop:text-base tablet:text-xs">
+                            <h1 className="font-bold text-3xl pr-2 2xl:text-2xl xl:text-base lg:text-xs sm:pr-0">
                                 Keys:
                             </h1>
                             {keys?.map(key => (
                                 <p
                                     className={
                                         select_key.current == key
-                                            ? 'bg-blue-500 text-white text-center w-8 h-8 font-bold text-3xl mr-4 3k:text-2xl laptop:text-base tablet:text-xs cursor-pointer hover:text-blue-500'
-                                            : 'font-bold text-3xl pr-4 3k:text-2xl laptop:text-base tablet:text-xs cursor-pointer hover:text-blue-500'
+                                            ? 'bg-blue-500 text-white text-center w-6 h-8 font-bold text-3xl mr-4 2xl:text-2xl xl:text-base lg:text-xs sm:text-xxs sm:mr-0 cursor-pointer hover:text-blue-500'
+                                            : 'font-bold text-3xl pr-4 2xl:text-2xl xl:text-base lg:text-xs sm:text-xxs sm:pr-0 cursor-pointer hover:text-blue-500'
                                     }
                                     key={key}
                                     onClick={() => {
@@ -352,24 +353,24 @@ const GuitarChords = () => {
                     </div>
 
                     {/* instruments */}
-                    <div className="flex flex-col mt-8 ml-16">
-                        <a
-                            className="btn rounded-lg bg-btn-color text-3xl px-8 font-bold py-1 text-center 3k:text-2xl 3k:px-6 laptop:text-base tablet:text-xs tablet:px-4 cursor-pointer"
+                    <div className="flex flex-col mt-8 ml-16 lg:ml-0 w-1/5 xs:mr-2">
+                        <Button
+                            className="w-40 lg:w-24 lg:h-12 sm:w-20 xs:w-16 xs:h-10 xs:px-2 rounded-lg bg-btn-color text-3xl text-center 2xl:text-2xl xl:text-base lg:text-xs cursor-pointer"
                             onClick={() => {
                                 selected_instrument.current = 'Guitar'
                                 setInstrument('Guitar')
                             }}>
                             Guitar
-                        </a>
+                        </Button>
 
-                        <a
-                            className="btn rounded-lg bg-btn-color text-3xl px-8 mt-8 font-bold py-1 3k:text-2xl 3k:px-6 laptop:text-base tablet:text-xs tablet:px-4 cursor-pointer"
+                        <Button
+                            className="w-40 lg:w-24 lg:h-12 sm:w-20 xs:w-16 xs:h-10 xs:px-2 rounded-lg bg-btn-color text-3xl mt-8 font-bold 2xl:text-2xl xl:text-base lg:text-xs cursor-pointer"
                             onClick={() => {
                                 selected_instrument.current = 'Ukulele'
                                 setInstrument('Ukulele')
                             }}>
                             Ukulele
-                        </a>
+                        </Button>
                     </div>
                 </div>
             </div>
