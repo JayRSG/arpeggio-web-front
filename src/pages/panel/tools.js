@@ -4,7 +4,11 @@ import GuitarChords from '@/components/tools/GuitarChords'
 import Metronome from '@/components/tools/Metronome'
 import PianoChords from '@/components/tools/PianoChords'
 import Tuner from '@/components/tools/Tuner'
-import Recorder from '@/components/tools/Recorder'
+import dynamic from 'next/dynamic'
+const Recorder = dynamic(() => import('@/components/tools/Recorder'), {
+    ssr: false,
+})
+// import Recorder from '@/components/tools/Recorder'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import Footer from '@/components/Layouts/Footer'
