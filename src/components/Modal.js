@@ -31,7 +31,7 @@ const Modal = props => {
                     root: '',
                     overlay: 'opacity-100 absolute',
                     modal:
-                        'w-full lg:w-3/5 md:w-3/5 sm:w-11/12 bg-main-color max-h-full p-0 !important overflow-visible !important sm:m-0',
+                        '!important w-full lg:w-3/5 md:w-3/5 sm:w-11/12 bg-main-color max-h-full p-0 !important overflow-visible !important sm:m-0 !important xs:m-auto',
                     closeButton:
                         'bg-main-color hover:opacity-70 transition-all duration-500 top-0 -right-12 sm:right-0 sm:-top-0',
                     closeIcon: '',
