@@ -1,5 +1,3 @@
-import Navbar from '@/components/Layouts/Navbar'
-import StudentNav from '@/components/panel/student/StudentNav'
 import GuitarChords from '@/components/tools/GuitarChords'
 import Metronome from '@/components/tools/Metronome'
 import PianoChords from '@/components/tools/PianoChords'
@@ -11,7 +9,6 @@ const Recorder = dynamic(() => import('@/components/tools/Recorder'), {
 // import Recorder from '@/components/tools/Recorder'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
-import Footer from '@/components/Layouts/Footer'
 import { useAuth } from '@/hooks/auth'
 import AppLayout from '@/components/Layouts/AppLayout'
 
