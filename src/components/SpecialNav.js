@@ -31,7 +31,13 @@ const SpecialNav = props => {
                                 className="mr-3 self-center"
                             />
                             <span className={`${props.className1}`}>
-                                {user?.data?.user_name}
+                                {user?.data?.user_name
+                                    ? user?.data?.user_name
+                                    : user?.data?.first_name.split(' ')[0] +
+                                      ' ' +
+                                      (user?.data?.first_name.split(' ')[1]
+                                          ? user?.data?.first_name.split(' ')[1]
+                                          : '')}
                             </span>
                             <FontAwesomeIcon
                                 icon={faChevronDown}

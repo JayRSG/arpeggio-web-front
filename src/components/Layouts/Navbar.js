@@ -182,7 +182,7 @@ const Navbar = () => {
                             </Link>
                         ) : (
                             <SpecialNav
-                                className="w-28 text-center relative top-14 right-8 z-50 md:hidden sm:hidden"
+                                className='text-center relative top-14 right-8 z-50 md:hidden sm:hidden w-30'
                                 className1="text-base"
                             />
                         )}
