@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import { useAuth } from '@/hooks/auth'
 import AuthSessionStatus from '../AuthSessionStatus'
 import AuthValidationErrors from '../AuthValidationErrors'
+import Loader from '../Loader'
 
 const LoginForm = () => {
     const router = useRouter()
@@ -20,6 +21,7 @@ const LoginForm = () => {
     const [remember, setRemember] = useState(false)
     const [errors, setErrors] = useState([])
     const [status, setStatus] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         if (router.query.reset?.length > 0 && errors.length === 0) {
@@ -32,7 +34,7 @@ const LoginForm = () => {
     const submitForm = async event => {
         event.preventDefault()
         console.log('Submit Handler Pressed')
-
+        setLoading(true)
         login({ user_name, password, setErrors, setStatus })
     }
     return (
@@ -44,7 +46,6 @@ const LoginForm = () => {
                 {/* Validation Errors */}
                 <AuthValidationErrors className="mb-4" errors={errors} />
             </div>
-
             <form
                 className="flex flex-col justify-center w-full items-center mt-8 flex-wrap"
                 action=""
@@ -56,6 +57,7 @@ const LoginForm = () => {
                         type="text"
                         name="user_name"
                         placeholder="Username"
+                        tabIndex={1}
                         value={user_name}
                         onChange={event =>
                             setUsername(event.currentTarget.value)
@@ -69,12 +71,12 @@ const LoginForm = () => {
                         type="password"
                         name="password"
                         placeholder="Password"
+                        tabIndex={2}
                         value={password}
                         onChange={event =>
                             setPassword(event.currentTarget.value)
                         }
                         required={true}
-                        autoFocus
                         autoComplete="current-password"
                     />
 
