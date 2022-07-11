@@ -6,16 +6,17 @@ import { useRouter } from 'next/router'
 export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const router = useRouter()
 
-    const { data: user, error, mutate } = useSWR('api/user/1', () =>
-        axios
-            .get('api/user/1')
+    const userFetcher = async url => {
+        return await axios
+            .get(url)
             .then(res => res.data)
             .catch(error => {
                 if (error.response.status !== 409) throw error
 
                 router.push('/verify-email')
-            }),
-    )
+            })
+    }
+    const { data: user, error, mutate } = useSWR('api/user/1', userFetcher)
 
     const csrf = () => axios.get('sanctum/csrf-cookie')
 
@@ -129,6 +130,8 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         if (middleware === 'guest' && redirectIfAuthenticated && user)
             router.push(redirectIfAuthenticated)
         if (middleware === 'auth' && error) logout()
+
+        console.log(user)
     }, [user, error])
 
     return {
