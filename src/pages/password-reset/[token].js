@@ -5,7 +5,7 @@ import AuthValidationErrors from '@/components/AuthValidationErrors'
 import Button from '@/components/Button'
 import GuestLayout from '@/components/Layouts/GuestLayout'
 import Input from '@/components/Input'
-import Label from '@/components/Label'
+// import Label from '@/components/Label'
 import Link from 'next/link'
 import { useAuth } from '@/hooks/auth'
 import { useEffect, useState } from 'react'
@@ -57,7 +57,7 @@ const PasswordReset = () => {
                 <form onSubmit={submitForm}>
                     {/* Email Address */}
                     <div>
-                        <Label htmlFor="email">Email</Label>
+                        <label htmlFor="email">Email</label>
 
                         <Input
                             id="email"
@@ -72,7 +72,7 @@ const PasswordReset = () => {
 
                     {/* Password */}
                     <div className="mt-4">
-                        <Label htmlFor="password">Password</Label>
+                        <label htmlFor="password">Password</label>
                         <Input
                             id="password"
                             type="password"
@@ -85,9 +85,9 @@ const PasswordReset = () => {
 
                     {/* Confirm Password */}
                     <div className="mt-4">
-                        <Label htmlFor="passwordConfirmation">
+                        <label htmlFor="passwordConfirmation">
                             Confirm Password
-                        </Label>
+                        </label>
 
                         <Input
                             id="passwordConfirmation"
