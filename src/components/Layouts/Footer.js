@@ -153,7 +153,7 @@ const Footer = () => {
                         <div
                             onClick={() => {
                                 window.open(
-                                    'https://api.whatsapp.com/send?phone=+8801718134714',
+                                    'https://api.whatsapp.com/send?phone=8801718134714',
                                     '_blank',
                                 )
                             }}>
@@ -210,7 +210,7 @@ const Footer = () => {
                             className="cursor-pointer text-blue-600"
                             onClick={() => {
                                 window.open(
-                                    'https://api.whatsapp.com/send?phone=+8801760060004',
+                                    'https://api.whatsapp.com/send?phone=8801760060004',
                                     '_blank',
                                 )
                             }}>
