@@ -1,5 +1,25 @@
 import Image from "next/image";
 
+// image imports
+
+import portfolio_1_image from '../../public/image/PORTOFOLIO-1.png'
+import portfolio_2_image from '../../public/image/PORTOFOLIO-2.png'
+import portfolio_3_image from '../../public/image/PORTOFOLIO-3.png'
+import portfolio_4_image from '../../public/image/PORTOFOLIO-4.png'
+import portfolio_5_image from '../../public/image/PORTOFOLIO-5.png'
+import portfolio_6_image from '../../public/image/PORTOFOLIO-6.png'
+import portfolio_7_image from '../../public/image/PORTOFOLIO-7.png'
+import portfolio_8_image from '../../public/image/PORTOFOLIO-8.png'
+import portfolio_9_image from '../../public/image/PORTFOLIO-9.png'
+import portfolio_10_image from '../../public/image/PORTOFOLIO-10.png'
+import portfolio_11_image from '../../public/image/PORTOFOLIO-11.png'
+import portfolio_12_image from '../../public/image/PORTOFOLIO-12.png'
+import portfolio_13_image from '../../public/image/PORTOFOLIO-13.png'
+import portfolio_14_image from '../../public/image/PORTOFOLIO-14.png'
+import portfolio_15_image from '../../public/image/PORTOFOLIO-15.png'
+import portfolio_16_image from '../../public/image/PORTOFOLIO-16.png'
+import portfolio_17_image from '../../public/image/PORTOFOLIO-17.png'
+
 const Portfolio = () => {
 	return (
 		<>
@@ -35,7 +55,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-1.png' width={1329} height={510} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_1_image} width={1329} height={510} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -61,7 +81,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-2.png' width={1322} height={519} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_2_image} width={1322} height={519} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -86,7 +106,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-3.png' width={1328} height={528} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_3_image} width={1328} height={528} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -112,7 +132,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-4.png' width={1347} height={542} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_4_image} width={1347} height={542} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -141,7 +161,7 @@ const Portfolio = () => {
 
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-5.png' width={1346} height={527} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_5_image} width={1346} height={527} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -170,7 +190,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-6.png' width={1342} height={514} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_6_image} width={1342} height={514} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -199,7 +219,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-7.png' width={1333} height={533} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_7_image} width={1333} height={533} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -225,7 +245,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-8.png' width={1341} height={527} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_8_image} width={1341} height={527} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -253,11 +273,12 @@ const Portfolio = () => {
 							<Image src='/image/portfolio-10.png' width={650} height={400} layout='responsive' objectFit='cover' className='' />
 						</div>
 					</div> */}
-				<div className='w-full h-full mt-8'>
+				{/********* Image has some issues so it is being blocked ******/}
+				{/* <div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-9.png' width={1340} height={529} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_9_image} width={1340} height={529} layout='responsive' objectFit='cover' className='' />
 					</div>
-				</div>
+				</div> */}
 
 				{/* part-10 */}
 				{/* <div className='w-full h-full flex text-portfolio-color-5 bg-portfolio-color-6 mt-8 3xl:h-104 laptop:h-104 tablet:flex-col tablet:h-full tablet:mt-16 large:flex-col large:h-full large:mt-16 mobile:flex-col mobile:h-full mobile:mt-16'>
@@ -281,7 +302,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-10.png' width={1336} height={520} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_10_image} width={1336} height={520} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -354,7 +375,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-11.png' width={1334} height={526} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_11_image} width={1334} height={526} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -409,7 +430,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-12.png' width={1346} height={522} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_12_image} width={1346} height={522} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -455,7 +476,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-13.png' width={1319} height={523} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_13_image} width={1319} height={523} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -525,7 +546,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-14.png' width={1340} height={528} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_14_image} width={1340} height={528} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -554,7 +575,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-15.png' width={1328} height={523} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_15_image} width={1328} height={523} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -576,7 +597,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-16.png' width={1344} height={526} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_16_image} width={1344} height={526} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 
@@ -602,7 +623,7 @@ const Portfolio = () => {
 					</div> */}
 				<div className='w-full h-full mt-8'>
 					<div className='w-full h-full'>
-						<Image src='/image/PORTOFOLIO-17.png' width={1343} height={526} layout='responsive' objectFit='cover' className='' />
+						<Image src={portfolio_17_image} width={1343} height={526} layout='responsive' objectFit='cover' className='' />
 					</div>
 				</div>
 			</div>

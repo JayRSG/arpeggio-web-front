@@ -6,6 +6,16 @@ import InstructorCarousal from './InstructorCarousal'
 import TimeTable from './TimeTable'
 import Button from './Button'
 
+// Importing Images
+import stu_course from '../../public/image/stu-course.jpg'
+import image_piano from '../../public/image/piano.jpg'
+import image_violin from '../../public/image/violin.jpg'
+import image_drum from '../../public/image/drum.jpg'
+import image_ukulele from '../../public/image/ukelele.jpg'
+import image_flute from '../../public/image/flute.jpg'
+import image_certificate from "../../public/image/certificate.png"
+
+
 const Home = () => {
     return (
         <>
@@ -54,7 +64,7 @@ const Home = () => {
                             <div className="flex flex-col items-center">
                                 <div className="w-80 h-56 lg:w-119 lg:h-84 md:w-119 md:h-84 sm:w-68 sm:h-60">
                                     <Image
-                                        src="/image/stu-course.jpg"
+                                        src={stu_course}
                                         width={5184}
                                         height={3456}
                                         layout="responsive"
@@ -71,7 +81,7 @@ const Home = () => {
                             <div className="flex flex-col items-center">
                                 <div className="w-80 h-56 lg:w-119 lg:h-84 md:w-119 md:h-84 sm:w-68 sm:h-60">
                                     <Image
-                                        src="/image/piano.jpg"
+                                        src={image_piano}
                                         width={5184}
                                         height={3456}
                                         layout="responsive"
@@ -88,7 +98,7 @@ const Home = () => {
                             <div className="flex flex-col items-center">
                                 <div className="w-80 h-56 lg:w-119 lg:h-84 md:w-119 md:h-84 sm:w-68 sm:h-60">
                                     <Image
-                                        src="/image/violin.jpg"
+                                        src={image_violin}
                                         width={5184}
                                         height={3456}
                                         layout="responsive"
@@ -105,7 +115,7 @@ const Home = () => {
                             <div className="flex flex-col items-center">
                                 <div className="w-80 h-56 lg:w-119 lg:h-84 md:w-119 md:h-84 sm:w-68 sm:h-60">
                                     <Image
-                                        src="/image/drum.jpg"
+                                        src={image_drum}
                                         width={5184}
                                         height={3456}
                                         layout="responsive"
@@ -122,7 +132,7 @@ const Home = () => {
                             <div className="flex flex-col items-center">
                                 <div className="w-80 h-56 lg:w-119 lg:h-84 md:w-119 md:h-84 sm:w-68 sm:h-60">
                                     <Image
-                                        src="/image/ukelele.jpg"
+                                        src={image_ukulele}
                                         width={5760}
                                         height={3840}
                                         layout="responsive"
@@ -139,7 +149,7 @@ const Home = () => {
                             <div className="flex flex-col items-center">
                                 <div className="w-80 h-56 lg:w-119 lg:h-84 md:w-119 md:h-84 sm:w-68 sm:h-60">
                                     <Image
-                                        src="/image/flute.jpg"
+                                        src={image_flute}
                                         width={6016}
                                         height={4000}
                                         layout="responsive"
@@ -213,7 +223,7 @@ const Home = () => {
                         <div className="w-2/5 lg:w-146 md:w-145 md:pl-8 sm:w-4/5">
                             <div className="w-full h-full">
                                 <Image
-                                    src="/image/certificate.png"
+                                    src={image_certificate}
                                     width={799}
                                     height={795}
                                     layout="responsive"

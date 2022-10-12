@@ -16,6 +16,15 @@ import { Pagination, Autoplay } from 'swiper'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons'
 
+// import images
+import instructor_1 from '../../public/image/instructor-1.jpg'
+import instructor_2 from '../../public/image/instructor-2.jpg'
+import instructor_3 from '../../public/image/instructor-3.jpg'
+import instructor_4 from '../../public/image/instructor-4.jpg'
+import instructor_5 from '../../public/image/instructor-5.jpg'
+import instructor_6 from '../../public/image/instructor-6.jpg'
+
+
 const InstructorCarousal = () => {
     return (
         <>
@@ -36,7 +45,7 @@ const InstructorCarousal = () => {
                         <div className="w-117 pl-4 lg:flex lg:items-center lg:w-1/2 lg:justify-center md:flex md:items-center md:justify-center md:w-1/2 sm:flex sm:items-center sm:w-3/4 sm:justify-center">
                             <div className="w-96 h-full 2xl:w-80 xl:w-64 sm:w-60">
                                 <Image
-                                    src="/image/instructor-1.jpg"
+                                    src={instructor_1}
                                     width={1718}
                                     height={2048}
                                     layout="responsive"
@@ -71,7 +80,7 @@ const InstructorCarousal = () => {
                         <div className="w-117 pl-4 lg:flex lg:items-center lg:justify-center lg:w-1/2 md:flex md:items-center md:justify-center md:w-1/2 sm:w-1/2 sm:flex sm:items-center sm:justify-center">
                             <div className="w-96 h-full 2xl:w-80 xl:w-64 sm:w-60">
                                 <Image
-                                    src="/image/instructor-2.jpg"
+                                    src={instructor_2}
                                     width={1367}
                                     height={1700}
                                     layout="responsive"
@@ -107,7 +116,7 @@ const InstructorCarousal = () => {
                         <div className="w-117 pl-4 lg:flex lg:items-center lg:justify-center lg:w-1/2 md:flex md:items-center md:justify-center md:w-1/2 sm:w-3/4 sm:flex sm:items-center sm:justify-center">
                             <div className="w-96 h-full 2xl:w-80 xl:w-64 sm:w-60 sm:h-80">
                                 <Image
-                                    src="/image/instructor-3.jpg"
+                                    src={instructor_3}
                                     width={1343}
                                     height={1700}
                                     layout="responsive"
@@ -142,7 +151,7 @@ const InstructorCarousal = () => {
                         <div className="w-117 pl-4 lg:flex lg:items-center lg:justify-center lg:w-1/2 md:flex md:items-center md:justify-center md:w-1/2 sm:w-3/4 sm:flex sm:items-center sm:justify-center">
                             <div className="w-96 h-full 2xl:w-80 xl:w-64 sm:w-60 sm:h-80">
                                 <Image
-                                    src="/image/instructor-4.jpg"
+                                    src={instructor_4}
                                     width={1440}
                                     height={1700}
                                     layout="responsive"
@@ -179,7 +188,7 @@ const InstructorCarousal = () => {
                         <div className="w-117 pl-4 lg:flex lg:items-center lg:justify-center lg:w-1/2 md:flex md:items-center md:justify-center md:w-1/2 sm:w-3/4 sm:flex sm:items-center sm:justify-center">
                             <div className="w-96 h-full 2xl:w-80 xl:w-64 sm:w-60 sm:h-80">
                                 <Image
-                                    src="/image/instructor-5.jpg"
+                                    src={instructor_5}
                                     width={1440}
                                     height={1700}
                                     layout="responsive"
@@ -214,7 +223,7 @@ const InstructorCarousal = () => {
                         <div className="w-117 pl-4 lg:flex lg:items-center lg:justify-center lg:w-1/2 md:flex md:items-center md:justify-center md:w-1/2 sm:w-3/4 sm:flex sm:items-center sm:justify-center">
                             <div className="w-96 h-full 2xl:w-80 xl:w-64 sm:w-60 sm:h-80">
                                 <Image
-                                    src="/image/instructor-6.jpg"
+                                    src={instructor_6}
                                     width={674}
                                     height={671}
                                     layout="responsive"
